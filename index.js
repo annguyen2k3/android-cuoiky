@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const port = 3000;
 
 const connect = async () => {
@@ -16,6 +17,8 @@ const connect = async () => {
 };
 
 connect();
+
+app.use(cors());
 
 // parse application/json
 app.use(bodyParser.json());
